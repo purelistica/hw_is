@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Airports Weather</title>
+
+</head>
+<body>
+
+    <h1>Airports Weather</h1>
+
+    <div id="table">
+        <table>
+            <tr>
+                <th>Airport</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+            </tr>
+            {% for el in data %}
+                <tr>
+                    <td><a href="\details\{{ el[3] }}">{{ el[3] }}</a></td>
+                    {% if el[1] >= -3 %}
+                        <td bgcolor="#9fdf9f">{{ el[1] }}</td>
+                    {% else %}
+                        <td bgcolor="#ff8080">{{ el[1] }}</td>
+                    {% endif %}
+                    {% if el[2] < 76 %}
+                        <td bgcolor="#9fdf9f">{{ el[2] }}</td>
+                    {% else %}
+                        <td bgcolor="#ff8080">{{ el[2] }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+
+</body>
+</html>

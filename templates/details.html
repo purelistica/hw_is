@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Airports Weather</title>
+
+</head>
+<body>
+
+    <h1>Airport {{airport}} Weather History</h1>
+
+    <div id="table">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+            </tr>
+            {% for el in data %}
+                <tr>
+                    <td>{{ el }}</td>
+                    <td>{{ data[el]['Temperature'] }}</td>
+                    <td>{{ data[el]['Humidity'] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
